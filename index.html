@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+
+    <!-- titolo modificato da variabilie msg e la classe da cssClass attraverso il binding -->
+    <h1 :class="cssClass">{{msg}}</h1>
+
+    <!-- CONSOLE -->
+    <!-- al click cambia colore al testo -->
+    <button @click="changeColor('red')">RED</button>
+    <button @click="changeColor('green')">GREEN</button>
+    <br>
+    <!-- al keyup del tasto enter viene chiamata la funzione inputTxt che prende il testo del v-model e lo assegna come msg all'h1 -->
+    <input type="text" placeholder="Write whatever you want" @keyup.enter="inputTxt" v-model="txt">
+    <br>
+    <!-- al keyup del tasto enter viene chiamata la funzione inputColor che prende il testo del v-model e lo assegna come classe css -->
+    <input type="text" placeholder="Write the color and press enter" @keyup.enter="inputColor" v-model="input">
+    <!-- /CONSOLE -->
+
+    <!-- immagine prende il src da variabile imgSrc attraverso il binding -->
+    <img :src="imgSrc" alt="Gattino">
+    
+  </div>
+
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
